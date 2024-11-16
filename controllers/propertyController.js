@@ -1,4 +1,4 @@
-const Property = require("../models/property"); // Adjust path as needed
+const Property = require("../models/Property"); // Adjust path as needed
 
 // Controller for adding a property
 const addProperty = async (req, res) => {
