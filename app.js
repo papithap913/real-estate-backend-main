@@ -12,11 +12,12 @@ connectDB();
 const app = express();
 
 app.use(cors({
-    origin: "https://realfront.netlify.app", // Frontend URL
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed methods
-    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
-    credentials: true // If cookies or authorization headers are used
+    origin: ["https://realfront.netlify.app", "http://localhost:3000"], // Frontend & Postman
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true
 }));
+
 
 // Body Parsing Middleware (Replace body-parser with built-in express.json)
 app.use(express.json());
