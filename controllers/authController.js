@@ -11,11 +11,9 @@ exports.registerUser = async (req, res) => {
       return res.status(400).json({ message: "Email already in use" });
     }
 
-    // Hash the password
-    const hashedPassword = await bcrypt.hash(password, 10);
-
+    
     // Create a new user
-    const user = new User({ name, email, password: hashedPassword });
+    const user = new User({ name, email, password });
     await user.save();
 
     // Generate a JWT token
