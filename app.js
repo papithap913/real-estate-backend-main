@@ -1,7 +1,6 @@
 const express = require("express");
 const connectDB = require("./config/db");
 const dotenv = require("dotenv");
-const bodyParser = require("body-parser");
 const cors = require("cors");
 
 // Load environment variables
@@ -19,9 +18,8 @@ app.use(cors({
     credentials: true // If cookies or authorization headers are used
 }));
 
-
-// Body Parser Middleware
-app.use(bodyParser.json());
+// Body Parsing Middleware (Replace body-parser with built-in express.json)
+app.use(express.json());
 
 // Import Routes
 const authRoutes = require("./routes/authRoutes");
