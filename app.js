@@ -12,10 +12,13 @@ connectDB();
 
 const app = express();
 
-// Enable CORS and specify allowed origin
 app.use(cors({
-    origin: "https://realfront.netlify.app" // Replace with your frontend's URL
+    origin: "https://realfront.netlify.app", // Frontend URL
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed methods
+    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+    credentials: true // If cookies or authorization headers are used
 }));
+
 
 // Body Parser Middleware
 app.use(bodyParser.json());
